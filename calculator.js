@@ -16,7 +16,7 @@ var currentInputValue,currentOperator,displayValue,result,backspaceValue,i,io;
             display.value += currentOperator;
         }
 
-        function displayResult() {
+        function showResult() {
             if (display.value === "") {
                 display.value = "";
             } else {
@@ -80,7 +80,7 @@ var currentInputValue,currentOperator,displayValue,result,backspaceValue,i,io;
                 } else if (key.which === 45) {
                     display.value += "-";
                 } else if (key.which === 13 || key.which === 27) {
-                    displayResult();
+                    showResult();
                 } else if (key.which === 99) {
                     clearAll();
                 } else {
@@ -90,7 +90,7 @@ var currentInputValue,currentOperator,displayValue,result,backspaceValue,i,io;
             }
         }
 
-     
+
         function backspaceKeyEvent (event) {
             if (event.which === 8) {
                 deleteSingle();
@@ -113,7 +113,7 @@ var currentInputValue,currentOperator,displayValue,result,backspaceValue,i,io;
                 operators[io].onclick = operatorInput;
             }
 
-            equal.onclick = displayResult;
+            equal.onclick = showResult;
 
             backspace.onclick = deleteSingle;
 
